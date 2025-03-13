@@ -1,0 +1,60 @@
+### Obtener usuarios
+GET http://localhost:3005/api/users
+
+### Crear usuario (POST)
+POST http://localhost:3005/api/users
+Content-Type: application/json
+
+{
+  "username": "samuel",
+  "password": "mierdecilla"
+}
+
+### Obtener un usuario específico
+GET http://localhost:3005/api/users/67bcacc0d4c51572cb389e3f
+
+### Eliminar un usuario
+DELETE http://localhost:3005/api/users/67bcb10bfe23b76cb03ebde7
+
+### Ingresos de un usuario
+POST http://localhost:3005/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 1000,
+  "type": "income",
+  "category": "Salary",
+  "userId": "67bcacc0d4c51572cb389e3f"
+}
+
+### Gasto de un usuario
+POST http://localhost:3005/api/transactions
+Content-Type: application/json
+
+{
+  "amount": 200,
+  "type": "expense",
+  "category": "Food",
+  "userId": "67bcacc0d4c51572cb389e3f"
+}
+
+### Ver todas las transcacciones de un usuario
+GET http://localhost:3005/api/transactions/67bcacc0d4c51572cb389e3f
+
+
+### Ver el balance del usuario
+GET http://localhost:3005/api/transactions/67bcacc0d4c51572cb389e3f/balance
+
+### Crear un objetivo
+POST http://localhost:3005/api/goals
+Content-Type: application/json
+
+{
+  "amount": 400,
+  "reason": "gta 6",
+  "category": "videogames",
+  "userId": "67bcacc0d4c51572cb389e3f"
+}
+
+### Ver objetivos
+GET http://localhost:3005/api/goals/67bcacc0d4c51572cb389e3f
